@@ -1,0 +1,37 @@
+/* Typography */
+
+@font-face {
+    font-family: 'caviar-dreams';
+    src: url('..font/caviardreams-webfont.woff') format('woff');
+    src: url('..font/caviardreams-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar-dreams';
+    src: url('..font/caviar_dreams_bold-webfont.woff') format('woff');
+    src: url('..font/caviar_dreams_bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ostrich-sans';
+    src: url('..font/ostrichsans-medium-webfont.woff') format('woff');
+    src: url('..font/ostrichsans-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ostrich-sans';
+    src: url('..font/ostrichsans-bold-webfont.woff') format('woff');
+    src: url('..font/ostrichsans-bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ostrich-sans';
+    src: url('..font/ostrichsans-light-webfont.woff') format('woff');
+    src: url('..font/ostrichsans-light-webfont.woff2') format('woff2');
+    font-weight: lighter;
+    font-style: normal;
+}
