@@ -1,37 +1,49 @@
-/* Typography */
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_500-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_500-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_100-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_100-webfont.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_300-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_300-webfont.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_700-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_700-webfont.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_900-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_900-webfont.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "museo_slab";
+    src: 
+        url("../fonts/museo_slab_1000-webfont.woff") format("woff"),
+        url("../fonts/museo_slab_1000-webfont.woff2") format("woff2");
+    font-weight: 1000;
+    font-style: normal;
+}
 
-@font-face {
-    font-family: 'caviar-dreams';
-    src: url('..font/caviardreams-webfont.woff') format('woff');
-    src: url('..font/caviardreams-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'caviar-dreams';
-    src: url('..font/caviar_dreams_bold-webfont.woff') format('woff');
-    src: url('..font/caviar_dreams_bold-webfont.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ostrich-sans';
-    src: url('..font/ostrichsans-medium-webfont.woff') format('woff');
-    src: url('..font/ostrichsans-medium-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ostrich-sans';
-    src: url('..font/ostrichsans-bold-webfont.woff') format('woff');
-    src: url('..font/ostrichsans-bold-webfont.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ostrich-sans';
-    src: url('..font/ostrichsans-light-webfont.woff') format('woff');
-    src: url('..font/ostrichsans-light-webfont.woff2') format('woff2');
-    font-weight: lighter;
-    font-style: normal;
-}
