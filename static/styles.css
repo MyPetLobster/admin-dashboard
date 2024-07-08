@@ -108,8 +108,8 @@ body {
     grid-template-columns: 1fr 250px;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-        "projects announcements"
-        "projects trending";
+        "projects info"
+        "projects info";
     gap: 1em;
 }
 .my-projects {
@@ -117,14 +117,25 @@ body {
     overflow-y: auto;
 }
 /* Hide the scroll bar for the projects div */
-.my-projects::-webkit-scrollbar {
+.my-projects::-webkit-scrollbar,
+.my-projects::-webkit-scrollbar-thumb,
+.info-div::-webkit-scrollbar,
+.info-div::-webkit-scrollbar-thumb {
     display: none;
 }
-.announcements {
-    grid-area: announcements;
+.info-div {
+    height: 100%;
+    grid-area: info;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1em;
 }
-.trending {
-    grid-area: trending;
+.announcement-card,
+.trending-card {
+    height: 90%;
+    border: 1px solid pink;
 }
 
 .main-content div>h3 {
@@ -146,12 +157,7 @@ body {
     border: 1px solid red;
 }
 
-.announcement-card,
-.trending-card {
-    height: 100%;
-    width: 100%;
-    border: 1px solid pink;
-}
+
 
 
 
