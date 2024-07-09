@@ -44,9 +44,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 /* General Styles */
-.hidden {
+/* .hidden {
     display: none;
-}
+} */
 body {
     font-family: "museo_slab", serif;
     font-size: 16px;
@@ -424,30 +424,10 @@ form {
 
 /* MAIN CONTENT */
 
-/* Project Cards
-.project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-    border-radius: 16px;
-    background-color: var(--primary-grey-light);
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
-    transition: 250ms;
-    cursor: pointer;
 
-}
-.project-card-image-div {
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 16px;
-    transition: 250ms;
-    transform: scale(0);
-    transform-origin: center;
-} */
-
+/* Project Cards */
 .project-card {
-    position: relative; /* Ensure the image is positioned relative to the card */
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -456,10 +436,15 @@ form {
     background-color: var(--primary-grey-light);
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
     transition: padding 250ms;
-    cursor: pointer;
-    overflow: hidden; /* Ensure the image does not overflow the card */
+    overflow: hidden;
 }
 
+.project-card-text-div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .project-card-image-div {
     position: absolute;
     top: 0;
@@ -468,15 +453,73 @@ form {
     bottom: 0;
     transform: translateY(-100%);
     transition: transform 250ms ease-in-out;
-    z-index: 1; /* Ensure the image is above the text */
+    z-index: 1;
 }
-
 .project-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
 }
+
+.project-card-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.project-card-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.project-card-title > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.project-card-title > p,
+.project-card-header > p {
+    font-size: 0.8em;
+}
+.project-card-title > p:hover {
+    color: var(--dark-blue) !important;
+    cursor: pointer;
+}
+
+.project-favicon-div {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.project-favicon-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+    z-index: 2;
+}
+.project-card-actions svg {
+    fill: var(--primary-grey);  
+    transition: 250ms;
+    cursor: pointer;
+}
+.project-card-actions svg:hover {
+    fill: var(--dark-blue);
+    transform: scale(1.1);
+}
+
+
+
 
 .hidden {
     visibility: hidden;
