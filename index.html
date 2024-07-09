@@ -179,7 +179,7 @@
         </div>
     </div>
     <script>
-        // if user hovers over sidebar link, make color of icon and text white and make stroke of icon thicker
+        // Hover effect for sidebar links
         const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
         sidebarLinks.forEach(link => {
             link.addEventListener('mouseover', () => {
@@ -205,7 +205,7 @@
             });
         });
 
-        // if user hovers over logo, change source of image to "cory-logo-v2.png"
+        // Change logo white to blue on hover
         const logoDiv = document.querySelector('.hero-container');
         const logo = document.querySelector('.logo-image');
         logoDiv.addEventListener('mouseover', () => {
@@ -214,6 +214,24 @@
         logoDiv.addEventListener('mouseout', () => {
             logo.src = 'static/images/cory-logo-v2-darkblue.png';
         });
+
+        const searchInput = document.querySelector('.text-input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.classList.add('dark-text');
+            searchInput.parentElement.style.backgroundColor = '#778d97';
+            searchInput.parentElement.style.border = '1px solid #1c2b34';
+            searchInput.previousElementSibling.style.fill = '#1c2b34';
+            searchInput.previousElementSibling.style.stroke = '#1c2b34';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.classList.remove('dark-text');
+            searchInput.parentElement.style.backgroundColor = '#c5d0db';
+            searchInput.parentElement.style.border = '1px solid #778d97';
+            searchInput.previousElementSibling.style.fill = '#778d97';
+            searchInput.previousElementSibling.style.stroke = '#778d97';
+
+        });
+
     </script>
 </body>
 </html>

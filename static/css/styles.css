@@ -262,25 +262,33 @@ a > p {
     cursor: pointer;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
-    transition: 250ms ease-in-out;
-
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 250ms;
 }
 .profile-pic-div:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.606);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.25);
 }
 .profile-pic-div > img {
     object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 .pd-sm {
     height: 40px;
     width: 40px;
 }
+.pd-sm:hover {
+    height: 44px;
+    width: 44px;
+}
 .pd-lg {
     margin-left: 1em;
     height: 70px;
     width: 70px;
+}
+.pd-lg:hover {
+    height: 76px;
+    width: 76px;
 }
 
 
@@ -330,11 +338,14 @@ form {
     border: 1px solid var(--dark-blue);
 }
 .search-bar:hover svg {
-    stroke: var(--dark-blue);
-    fill: var(--dark-blue);
+    stroke: var(--dark-blue) !important;
+    fill: var(--dark-blue) !important;
 }
 .search-bar:hover .text-input::placeholder {
     color: var(--dark-blue);
+}
+.dark-text::placeholder {
+    color: var(--dark-blue) !important;
 }
 .text-input {
     width: 100%;
