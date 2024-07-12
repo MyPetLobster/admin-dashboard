@@ -32,6 +32,9 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
     --primary-blue: #588cd5;
     --primary-grey: #778d97;
+    --primary-grey-transparent-01: #bec6c938;
+    --primary-grey-transparent-02: #bec6c993;
+    --primary-grey-transparent-03: #bec6c9c4;
     --primary-grey-light: #c5d0db;
     --primary-grey-light-alt: #b4bbc2;
     --primary-grey-dark: #47525c;
@@ -102,16 +105,45 @@ button:active {
 
 .sidebar {
     height: 100%;
-    width: 250px;
+    width: 275px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 3em;
-    background-color: var(--primary-grey);
     grid-row: 1 / -1;
 }
+
+/* Sidebar Collapse */
+
+.collapsed-sidebar {
+    width: auto;
+    gap: 1em;
+}
+.collapsed-logo {
+    transform: scale(0.5);
+    margin-left: 0;
+    position: relative;
+    right: 1.5em;
+}
+.collapsed-text {
+    display: none;
+}
+.nav>li {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+.nav>.current-page {
+    font-weight: bold;
+    gap: 3em;
+}
+.current-page::after {
+    content: "<-";
+}
+
+
 .sidebar * {
     color: var(--dark-blue);
 }
@@ -157,7 +189,7 @@ button:active {
 .main-content {
     height: 100%;
     display: grid;
-    padding-bottom: 1em;
+    padding: 1em 0 1em 1em;
     grid-template-columns: 1fr 20%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
@@ -219,8 +251,11 @@ button:active {
 /* Sidebar */
 .logo-image {
     height: 60px;
+    transition: 250ms;
 }
 .sidebar {
+    background-color: var(--primary-grey-transparent-03);
+    box-shadow: 0 0 12 0 rgba(0, 0, 0, 0.167);
     padding: 1em;
 }
 .nav-container {
@@ -245,6 +280,7 @@ a > p {
 }
 .hero-container {
     margin-left: 1em;
+    margin-right: 0;
     align-self: flex-start;
     justify-self: center;
     cursor: pointer;
@@ -425,6 +461,15 @@ form {
 
 /* MAIN CONTENT */
 
+/* Info Div */
+.info-div {
+    padding: 1em;
+    margin-right: 1em;
+    background-color: var(--primary-grey-transparent-01);
+    border-radius: 16px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
+    overflow: hidden;
+}
 
 /* Project Cards */
 .project-card {
@@ -441,7 +486,6 @@ form {
 }
 .project-card:hover {
     box-shadow: none;
-    transform: scale(1.05);
 }
 .card-logo-img {
     height: 28px !important;

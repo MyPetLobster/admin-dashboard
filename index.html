@@ -16,7 +16,7 @@
             
             <div class="nav-container">
                 <ul class="nav">
-                    <li>
+                    <li class="current-page">
                         <a href="#">
                             <svg class="do-fill" fill="rgb(28, 43, 52)" width="16px" height="16px" viewBox="0 0 128 128" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M120,58.3l-0.2-0.7L64.5,2.5l0,0l0,0L8,58.3V127h45V82h20v45h47V58.3z M112,119H81V74H45v45H16V62.6l48.5-48.8L112,61.7   V119z"/></g></svg>
                             <p>Home</p>
@@ -650,6 +650,31 @@
             const colorType = inverted.length === 3 ? 'rgb' : 'rgba';
             return `${colorType}(${inverted.join(', ')})`;
         }
+
+        // if someone clicks on hero img in sidebar, collapse sidebar by removing the text and leaving only the icons. Also shrink the logo to 50%
+        const heroImg = document.querySelector('.logo-image');
+        heroImg.addEventListener('click', () => {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed-sidebar');
+            const sidebarText = document.querySelectorAll('.sidebar ul li p');
+            sidebarText.forEach(text => {
+                text.classList.toggle('collapsed-text');
+            });
+            const logo = document.querySelector('.hero-container');
+            logo.classList.toggle('collapsed-logo');
+        });
+
+
+        // add .current-page class to the li of whatever link user clicks in sidebar, remove from others
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebarLinks.forEach(otherLink => {
+                    otherLink.parentElement.classList.remove('current-page');
+                });
+                link.parentElement.classList.add('current-page');
+            });
+        });
+
     </script>
 </body>
 </html>
