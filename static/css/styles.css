@@ -339,6 +339,7 @@ a > p {
     gap: 0.5em;
 }
 .search-options {
+    width: auto;
     padding: 0;
     display: flex;
     align-items: center;
@@ -346,6 +347,7 @@ a > p {
 }
 .search-icon {
     /* Google, StackOverflow, OpenAI */
+    width: 24px;
     cursor: pointer;
     transition: 250ms;
 }
@@ -685,8 +687,36 @@ form {
     h2 {
         font-size: 1.2em;
     }
+
+    .info-div {
+        padding: 0.5em;
+    }
+    .info-div h3 {
+        font-size: 1em;
+    }
+    
+    .name-link {
+        font-size: 0.8em;
+    }
+
     .search-bar {
-        height: 30px;
+        height: 26px;
+    }
+    .search-bar>svg {
+        height: 20px;
+        width: 20px;
+    }
+    .search-bar>input {
+        padding: 0;
+        font-size: 0.8em;
+    }
+    .search-options > div > svg {
+        height: 20px;
+        width: 20px;
+    }
+    .search-icon {
+        width: 18px;
+        height: 18px;
     }
     .pd-sm {
         height: 30px;
@@ -716,4 +746,16 @@ form {
         gap: 1em;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .info-div {
+        padding: 0.3em;
+    }
+    .info-div h3 {
+        font-size: 0.7em;
+    }
+    .info-div p {
+        font-size: 0.5em;
+    }
 }
