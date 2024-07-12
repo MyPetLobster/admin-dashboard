@@ -657,7 +657,6 @@
         projectCards.forEach(card => {
             const datePara = card.querySelector('.project-card-title p');
             const dataParaTextContent = datePara.textContent;
-
             card.addEventListener('mouseover', () => {
                 const colorThief = new ColorThief();
                 const image = card.querySelector('.project-card-image-div img');
@@ -695,6 +694,39 @@
                 datePara.removeEventListener('mouseover', () => {});
                 datePara.removeEventListener('mouseout', () => {});
             });
+
+            let imageDisplayed = false;
+            const imageDiv = card.querySelector('.project-card-image-div');
+
+            card.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+
+                if (!imageDisplayed) {
+                    imageDiv.style.transform = 'translateY(0)';
+                    datePara.style.background = 'rgba(0, 0, 0, 0.6)';
+                    datePara.style.boxShadow = '0 0 10px 0 rgba(0, 0, 0, 0.3)';
+                    datePara.textContent = 'View Project';
+                    datePara.style.zIndex = '2';
+                    datePara.style.cursor = 'pointer';
+                    datePara.addEventListener('click', openProjectLink);
+                } else {
+                    imageDiv.style.transform = 'translateY(-100%)';
+                    datePara.style.background = 'transparent';
+                    datePara.style.boxShadow = 'none';
+                    datePara.textContent = dataParaTextContent;
+                    datePara.style.zIndex = '0';
+                    datePara.style.cursor = 'default';
+                    datePara.style.color = 'rgb(28, 43, 52)';
+                    datePara.removeEventListener('click', openProjectLink);
+                }
+
+                imageDisplayed = !imageDisplayed;
+            });
+
+            function openProjectLink() {
+                const projectLink = card.querySelector('.project-link-hidden').textContent;
+                window.open(projectLink, '_blank');
+            }
         });
 
         function invertColor() {
