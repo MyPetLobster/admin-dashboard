@@ -32,9 +32,8 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
     --primary-blue: #588cd5;
     --primary-grey: #778d97;
-    --primary-grey-transparent-01: #bec6c938;
-    --primary-grey-transparent-02: #bec6c993;
-    --primary-grey-transparent-03: #bec6c9c4;
+    --primary-grey-transparent-A: #bec6c993;
+    --primary-grey-transparent-B: #bec6c9c4;
     --primary-grey-light: #c5d0db;
     --primary-grey-light-alt: #b4bbc2;
     --primary-grey-dark: #47525c;
@@ -208,7 +207,11 @@ button:active {
 .project-grid::-webkit-scrollbar-track,
 .my-projects::-webkit-scrollbar,
 .my-projects::-webkit-scrollbar-thumb,
-.my-projects::-webkit-scrollbar-track {
+.my-projects::-webkit-scrollbar-track,
+.updates-container::-webkit-scrollbar,
+.updates-container::-webkit-scrollbar-thumb,
+.updates-container::-webkit-scrollbar-track,
+.trending::-webkit-scrollbar {
     display: none;
 }
 .info-div {
@@ -219,11 +222,11 @@ button:active {
     grid-template-columns: 1fr;
     gap: 1em;
 }
-.announcement-card,
+.updates-card,
 .trending-card {
     height: 80%;
 }
-.announcements>h3,
+.updates>h3,
 .trending>h3 {
     padding: 0;
 }
@@ -254,7 +257,7 @@ button:active {
     transition: 250ms;
 }
 .sidebar {
-    background-color: var(--primary-grey-transparent-03);
+    background-color: var(--primary-grey-transparent-B);
     box-shadow: 0 0 12 0 rgba(0, 0, 0, 0.167);
     padding: 1em;
 }
@@ -367,6 +370,7 @@ form {
     padding: 0px;
     border: 1px solid var(--primary-grey);
     background-color: var(--primary-grey-light);
+    opacity: 0.6;
     transition: 250ms;
 }
 .search-bar:hover {
@@ -465,7 +469,7 @@ form {
 .info-div {
     padding: 1em;
     margin-right: 1em;
-    background-color: var(--primary-grey-transparent-01);
+    background-color: var(--primary-grey-transparent-A);
     border-radius: 16px;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
     overflow: hidden;
@@ -582,6 +586,36 @@ form {
 }
 
 
+.updates-container {
+    max-height: 30vh;
+    overflow: auto;
+}
+.trending {
+    overflow: auto;
+}
+.updates-card,
+.trending-card {
+    height: auto;
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    border-radius: 16px;
+    background-color: var(--primary-grey-light);
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
+    overflow: hidden;
+
+}
+.updates-card {
+    background-color: rgba(41, 56, 73, 0.709);
+    color: var(--primary-grey-light);
+}
+.trending-card {
+    background-color: rgba(33, 66, 104, 0.727);
+    color: var(--primary-grey-light);
+}
 
 
 .hidden {
