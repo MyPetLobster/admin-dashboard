@@ -391,7 +391,7 @@ form {
     cursor: pointer;
 }
 .name-link:hover {
-    color: var(--primary-grey);
+    color: var(--primary-grey-dark);
 }
 
 /* Welcome Section */
@@ -507,7 +507,6 @@ form {
 
 
 .project-card-title > p:hover {
-    color: var(--primary-blue) !important; 
     transform: scale(1.05);
     cursor: pointer;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="static/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -590,14 +591,19 @@
             const dataParaTextContent = datePara.textContent;
 
             card.addEventListener('mouseover', () => {
+                // Use color thief to find the dominant color of the image and set color of datePara to inverse of that color
+                const colorThief = new ColorThief();
+                const image = card.querySelector('.project-card-image-div img');
+                const color = colorThief.getColor(image);
+                const invertedColor = invertColor(...color);
                 const imageDiv = card.querySelector('.project-card-image-div');
                 imageDiv.style.transform = 'translateY(0)';
-                datePara.style.background = 'rgba(0, 0, 0, 0.3)';
+                datePara.style.color = invertedColor;
+                datePara.style.background = `rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.6)`;
                 datePara.style.boxShadow = '0 0 10px 0 rgba(0, 0, 0, 0.3)';
                 datePara.textContent = 'View Project';
                 datePara.style.zIndex = '2';
                 datePara.style.cursor = 'pointer';
-                datePara.style.color = '#c5d0db';
                 datePara.addEventListener('mouseover', () => {
                     datePara.style.fontWeight = 'bold';
                 });
@@ -623,6 +629,27 @@
                 datePara.removeEventListener('mouseout', () => {});
             });
         });
+
+        function invertColor() {
+            // Extract RGB(A) values from arguments
+            const rgbValues = Array.from(arguments).join(',').match(/(-?[0-9\.]+)/g);
+            if (!rgbValues || rgbValues.length < 3 || rgbValues.length > 4) {
+                throw new Error('Invalid color input');
+            }
+
+            // Invert RGB values
+            const inverted = rgbValues.map((value, index) => {
+                if (index < 3) { // Invert RGB values
+                    return 255 - value;
+                } else { // Correctly handle alpha value if present
+                    return Math.max(0, Math.min(1, 1 - value));
+                }
+            });
+
+            // Construct the RGB(A) string
+            const colorType = inverted.length === 3 ? 'rgb' : 'rgba';
+            return `${colorType}(${inverted.join(', ')})`;
+        }
     </script>
 </body>
 </html>
