@@ -30,6 +30,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Color Variables */
 
 :root {
+    --primary-blue: #588cd5;
     --primary-grey: #778d97;
     --primary-grey-light: #c5d0db;
     --primary-grey-light-alt: #b4bbc2;
@@ -54,7 +55,7 @@ body {
     padding: 0;
     color: var(--dark-blue);
 
-    background-image: url('../images/alaska.jpeg');
+    background-image: url('../images/alaska-2.jpeg');
     background-size: cover;
 
     height: 100vh;
@@ -203,7 +204,7 @@ button:active {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px;
+    grid-auto-rows: 250px;
     gap: 1em;
 }
 .project-grid .project-card {
@@ -435,8 +436,17 @@ form {
     border-radius: 16px;
     background-color: var(--primary-grey-light);
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.167);
-    transition: padding 250ms;
+    transition: 250ms;
     overflow: hidden;
+}
+.project-card:hover {
+    box-shadow: none;
+    transform: scale(1.05);
+}
+.card-logo-img {
+    height: 28px !important;
+    width: 28px !important;
+    border-radius: 0 !important;
 }
 
 .project-card-text-div {
@@ -466,7 +476,7 @@ form {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
 }
 .project-card-title {
     width: 100%;
@@ -484,21 +494,22 @@ form {
 .project-card-header > p {
     font-size: 0.8em;
 }
-.project-card-title > p:hover {
-    color: var(--dark-blue) !important;
-    cursor: pointer;
+
+.project-card-title > p {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    line-height: auto;
+    max-height: 1.4em;
+    padding: 0 0.5em;
+    border-radius: 4px;
+    transition: 250ms;
 }
 
-.project-favicon-div {
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.project-favicon-div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.project-card-title > p:hover {
+    color: var(--primary-blue) !important; 
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .project-card-actions {
@@ -507,6 +518,15 @@ form {
     justify-content: flex-end;
     gap: 0.5em;
     z-index: 2;
+    width: auto;
+    align-self: flex-end;
+    border-radius: 8px;
+    padding: 0.2em 0.5em;
+    transition: 250ms;
+}
+.project-card-actions:hover {
+    background: rgba(0, 0, 0, 0.285);
+    transform: scale(1.05);
 }
 .project-card-actions svg {
     fill: var(--primary-grey);  
@@ -514,7 +534,7 @@ form {
     cursor: pointer;
 }
 .project-card-actions svg:hover {
-    fill: var(--dark-blue);
+    fill: var(--primary-blue);
     transform: scale(1.1);
 }
 
